@@ -76,7 +76,8 @@
   width: 100%;
   height: calc(100% - 140px);
   overflow-y: scroll;
-  background-color: crimson;
+  background-image: url('../img/mine.jpg');
+  background-size: contain;
 }
 
 .right-box .bottom-right{
