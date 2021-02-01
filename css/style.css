@@ -49,8 +49,9 @@
 .right-box .top-right{
   width: 100%;
   height: 70px;
-  background-color: chartreuse;
-  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eaeaea;
 }
 
 .left-box .disclaimer{
@@ -84,4 +85,29 @@
   width: 100%;
   height: 70px;
   background-color: darkgoldenrod;
+}
+
+.top-left .name-box,
+.top-left .ico-box{
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.top-left .ico-box{
+  border-right: 2px solid #e1e1e1;
+}
+
+.name-box img{
+  height: 90%;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.ico-box i{
+  margin: 0 10px;
+  font-size: 22px;
+  color: #b1b1b1;
+  cursor: pointer;
 }
