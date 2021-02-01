@@ -88,11 +88,16 @@
 .right-box .bottom-right{
   width: 100%;
   height: 70px;
-  background-color: darkgoldenrod;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  background-color: #f3eeea;
 }
 
 .top-left .name-box,
-.top-left .ico-box{
+.top-right .name-box,
+.top-left .ico-box,
+.top-right .ico-box{
   height: 100%;
   padding: 5px;
   display: flex;
@@ -166,6 +171,11 @@
   padding: 8px 20px;
 }
 
+.main-left .user-box:hover{
+  background-color: gray;
+  cursor: pointer;
+}
+
 .main-left .user-box:nth-child(1n + 2){
   border-top: 1px solid lightgray;
 }
@@ -178,4 +188,23 @@
 .user-box span{
   vertical-align: top;
   margin-left: 10px;
+}
+
+.content-right p{
+  color: gray;
+  font-size: 14px;
+}
+
+.bottom-right i{
+  font-size: 22px;
+  color: #6b7376;
+  cursor: pointer;
+}
+
+.bottom-right input{
+  height: 90%;
+  flex-grow: 1;
+  margin: 0 20px;
+  padding: 10px;
+  border: none;
 }
