@@ -43,7 +43,6 @@
 .container .right-box{
   width: 65%;
   height: 100%;
-  background-color: cadetblue;
 }
 
 .left-box .top-left,
@@ -71,4 +70,17 @@
   height: calc(100% - 210px);
   overflow-y: scroll;
   background-color: cornflowerblue;
+}
+
+.right-box .main-right{
+  width: 100%;
+  height: calc(100% - 140px);
+  overflow-y: scroll;
+  background-color: crimson;
+}
+
+.right-box .bottom-right{
+  width: 100%;
+  height: 70px;
+  background-color: darkgoldenrod;
 }
