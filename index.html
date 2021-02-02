@@ -61,9 +61,9 @@
       <!-- top -->
       <div class="top-right">
         <div class="name-box">
-          <img src="img/avatar_1.jpg" alt="avatar">
+          <img :src="contacts[2].avatar" :alt="contacts[2].imgAlt">
           <div class="content-right">
-            <span>Michele</span>
+            <span> {{contacts[2].name}} </span>
             <p>Ultimo accesso oggi alle</p>
           </div>
         </div>
