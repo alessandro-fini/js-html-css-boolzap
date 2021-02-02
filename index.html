@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
   <!-- background -->
@@ -16,14 +17,14 @@
     <div class="bg-main"></div>
   </div>
   <!-- /background -->
-  <div class="container">
+  <div class="container" id="app">
     <!-- left-content -->
     <div class="left-box">
       <!-- top -->
       <div class="top-left">
         <div class="name-box">
-          <img src="img/avatar_io.jpg" alt="avatar">
-          <span>Nome utente</span>
+          <img :src="myUser.avatar" :alt="myUser.imgAlt">
+          <span> {{myUser.name}} </span>
         </div>
         <div class="ico-box">
           <i class="fas fa-circle-notch"></i>
@@ -126,6 +127,7 @@
         <div class="message-container">
           <div class="message sent">
             <span>Messaggio inviato 1</span>
+            <p class="date">01/02/2021 09.36</p>
           </div>
           <div class="message sent">
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur doloribus mollitia iste perspiciatis suscipit sint repellat, velit ipsum sequi reprehenderit voluptate, dolore libero explicabo porro voluptatibus. Officia aperiam repellat consectetur!</span>
@@ -160,5 +162,6 @@
     <!-- /bottom -->
     <!-- /right-content -->
   </div>
+  <script src="js/script.js"></script>
 </body>
 </html>
