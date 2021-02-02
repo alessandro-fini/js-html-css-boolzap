@@ -77,11 +77,11 @@
       <!-- main -->
       <div class="main-right">
         <div class="message-container">
-          <div class="message sent">
-            <span>Messaggio inviato 1</span>
-            <p class="date">01/02/2021 09.36</p>
+          <div class="message" v-for="chat in contacts[2].messages" :class="chat.status">
+            <span> {{chat.text}} </span>
+            <p class="date"> {{chat.date}} </p>
           </div>
-          <div class="message sent">
+          <!-- <div class="message sent">
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur doloribus mollitia iste perspiciatis suscipit sint repellat, velit ipsum sequi reprehenderit voluptate, dolore libero explicabo porro voluptatibus. Officia aperiam repellat consectetur!</span>
             <p class="date">01/02/2021 09.36</p>
           </div>
@@ -100,7 +100,7 @@
           <div class="message sent">
             <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia minima deserunt ratione iure impedit dignissimos nihil sequi voluptatem! Est in omnis aliquid aut voluptatem ut rem dolor, optio magni suscipit?</span>
             <p class="date">01/02/2021 09.36</p>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- /main -->
