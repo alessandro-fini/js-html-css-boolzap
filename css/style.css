@@ -172,7 +172,7 @@
 }
 
 .main-left .user-box:hover{
-  background-color: gray;
+  background-color: lightgray;
   cursor: pointer;
 }
 
@@ -217,10 +217,11 @@
 
 .message-container .message{
   max-width: 50%;
-  padding: 20px 10px;
+  padding: 30px 20px;
   margin-bottom: 10px;
   border-radius: 10px;
   clear: both;
+  position: relative;
 }
 
 .message.sent{
@@ -231,4 +232,11 @@
 .message.received{
   float: left;
   background-color: #fff;
+}
+
+.message .date{
+  color: #646464;
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
 }
