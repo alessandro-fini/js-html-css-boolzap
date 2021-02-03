@@ -23,7 +23,7 @@
       <!-- top -->
       <div class="top-left">
         <div class="name-box">
-          <img :src="myUser.avatar" :alt="myUser.imgAlt">
+          <img :src="'img/avatar' + myUser.avatar + '.jpg'" :alt="myUser.name">
           <span> {{myUser.name}} </span>
         </div>
         <div class="ico-box">
@@ -48,8 +48,8 @@
       <!-- /top -->
       <!-- main -->
       <div class="main-left">
-        <div class="user-box" v-for="(item, index) in contacts">
-          <img :src="contacts[index].avatar" :alt="contacts[index].imgAlt">
+        <div class="user-box" v-for="(item, index) in contacts" @click="toActive(index)">
+          <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="contacts[index].name">
           <span> {{contacts[index].name}} </span>
         </div>
       </div>
@@ -61,9 +61,9 @@
       <!-- top -->
       <div class="top-right">
         <div class="name-box">
-          <img :src="contacts[2].avatar" :alt="contacts[2].imgAlt">
+          <img :src="'img/avatar' + activeContact.avatar + '.jpg'" :alt="activeContact.name">
           <div class="content-right">
-            <span> {{contacts[2].name}} </span>
+            <span> {{activeContact.name}} </span>
             <p>Ultimo accesso oggi alle</p>
           </div>
         </div>
@@ -77,30 +77,10 @@
       <!-- main -->
       <div class="main-right">
         <div class="message-container">
-          <div class="message" v-for="chat in contacts[2].messages" :class="chat.status">
+          <div class="message" v-for="chat in activeContact.messages" :class="chat.status">
             <span> {{chat.text}} </span>
             <p class="date"> {{chat.date}} </p>
           </div>
-          <!-- <div class="message sent">
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur doloribus mollitia iste perspiciatis suscipit sint repellat, velit ipsum sequi reprehenderit voluptate, dolore libero explicabo porro voluptatibus. Officia aperiam repellat consectetur!</span>
-            <p class="date">01/02/2021 09.36</p>
-          </div>
-          <div class="message received">
-            <span>Messaggio ricevuto 1</span>
-            <p class="date">01/02/2021 09.36</p>
-          </div>
-          <div class="message received">
-            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic iure quibusdam illo atque accusantium tenetur soluta consequuntur eligendi, voluptas earum eos accusamus ex in ab ducimus. Nihil exercitationem fugiat impedit.</span>
-            <p class="date">01/02/2021 09.36</p>
-          </div>
-          <div class="message sent">
-            <span>Messaggio inviato 3</span>
-            <p class="date">01/02/2021 09.36</p>
-          </div>
-          <div class="message sent">
-            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia minima deserunt ratione iure impedit dignissimos nihil sequi voluptatem! Est in omnis aliquid aut voluptatem ut rem dolor, optio magni suscipit?</span>
-            <p class="date">01/02/2021 09.36</p>
-          </div> -->
         </div>
       </div>
       <!-- /main -->
