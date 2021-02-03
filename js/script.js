@@ -183,6 +183,7 @@ var app = new Vue ({
         ]
       }
     ],
+    /* contatto attivo */
     activeContact: {
       avatar: '_1',
       name: 'Michele',
@@ -204,13 +205,29 @@ var app = new Vue ({
         status: 'received'
         }
       ]
-    }
+    },
+    /* messaggio da input */
+    newText: '',
   },
   methods: {
     /* sostituzione del contatto attivo */
     toActive: function(index){
       this.activeContact = this.contacts[index];
       console.log(this.activeContact);
+      this.contacts[index] = this.activeContact;
+    },
+    /* aggiunta nuovo messaggio */
+    addMessage: function(){
+      /* rilevamento data e ora */
+      newDate = moment().format('DD/MM/YYYY HH:mm:ss');
+      /* / */
+      newMessage = {
+        date: newDate,
+        text: this.newText,
+        status: 'sent'
+      };
+      this.activeContact.messages.push(newMessage);
+      this.newText = '';
     }
   }
 });

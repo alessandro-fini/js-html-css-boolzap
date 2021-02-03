@@ -87,13 +87,14 @@
       <!-- bottom -->
       <div class="bottom-right">
         <i class="far fa-smile"></i>
-        <input type="text" placeholder="Scrivi un messaggio">
+        <input type="text" placeholder="Scrivi un messaggio" v-model="newText" @keyup.enter="addMessage">
         <i class="fas fa-microphone"></i>
       </div>
     </div>
     <!-- /bottom -->
     <!-- /right-content -->
   </div>
+  <script src="lib/moment/moment.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
