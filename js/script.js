@@ -184,28 +184,7 @@ var app = new Vue ({
       }
     ],
     /* contatto attivo */
-    activeContact: {
-      avatar: '_1',
-      name: 'Michele',
-      visible: true,
-      messages: [
-        {
-        date: '10/01/2020 15:30:55',
-        text: 'Hai portato a spasso il cane?',
-        status: 'sent'
-        },
-        {
-        date: '10/01/2020 15:50:00',
-        text: 'Ricordati di dargli da mangiare',
-        status: 'sent'
-        },
-        {
-        date: '10/01/2020 16:15:22',
-        text: 'Tutto fatto!',
-        status: 'received'
-        }
-      ]
-    },
+    activeContact: '',
     /* messaggio da input */
     newText: '',
   },
@@ -213,7 +192,6 @@ var app = new Vue ({
     /* sostituzione del contatto attivo */
     toActive: function(index){
       this.activeContact = this.contacts[index];
-      console.log(this.activeContact);
       this.contacts[index] = this.activeContact;
     },
     /* aggiunta nuovo messaggio */
