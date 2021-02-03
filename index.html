@@ -49,8 +49,8 @@
       <!-- main -->
       <div class="main-left">
         <div class="user-box" v-for="(item, index) in contacts" @click="toActive(index)" v-if="activeContact == '' ? activeContact = contacts[0] : activeContact = activeContact">
-          <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="contacts[index].name">
-          <span> {{contacts[index].name}} </span>
+          <img :src="'img/avatar' + item.avatar + '.jpg'" :alt="item.name">
+          <span> {{item.name}} </span>
         </div>
       </div>
       <!-- /main -->

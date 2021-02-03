@@ -204,8 +204,21 @@ var app = new Vue ({
         text: this.newText,
         status: 'sent'
       };
-      this.activeContact.messages.push(newMessage);
+      messageArray = this.activeContact.messages;
+      messageArray.push(newMessage);
       this.newText = '';
-    }
+      /* messaggio di risposta */
+      answer = setInterval(function(){
+        answerDate = moment().format('DD/MM/YYYY HH:mm:ss');
+        answerMessage = {
+          date: answerDate,
+          text: 'ok',
+          status: 'received'
+        };
+        this.messageArray.push(answerMessage);
+        clearInterval(answer);
+      }, 1000);
+      /* / */
+    },
   }
 });
