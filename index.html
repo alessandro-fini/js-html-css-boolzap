@@ -79,9 +79,9 @@
         <div class="message-container">
           <div class="message" v-for="(chat, index) in activeContact.messages" :class="chat.status">
             <span> {{chat.text}} </span>
-            <i class="fas fa-ellipsis-v" @click="showBox"></i>
+            <i class="fas fa-ellipsis-v" @click="showBox(index)"></i>
             <p class="date"> {{chat.date}} </p>
-            <div class="delete-box" :class="{active: classActive}">
+            <div class="delete-box" :class="{active: chat.menu}">
               <p>Message info</p>
               <p v-if="chat.status == 'sent'" @click="deleteMessage(index)">Delete message</p>
             </div>

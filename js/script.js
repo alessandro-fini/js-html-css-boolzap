@@ -14,17 +14,20 @@ var app = new Vue ({
           {
           date: '10/01/2020 15:30:55',
           text: 'Hai portato a spasso il cane?',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '10/01/2020 15:50:00',
           text: 'Ricordati di dargli da mangiare',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '10/01/2020 16:15:22',
           text: 'Tutto fatto!',
-          status: 'received'
+          status: 'received',
+          menu: false
           }
         ]
       },
@@ -36,17 +39,20 @@ var app = new Vue ({
           {
           date: '20/03/2020 16:30:00',
           text: 'Ciao come stai?',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '20/03/2020 16:30:55',
           text: 'Bene grazie! Stasera ci vediamo?',
-          status: 'received'
+          status: 'received',
+          menu: false
           },
           {
           date: '20/03/2020 16:35:00',
           text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           }
         ]
       },
@@ -58,17 +64,20 @@ var app = new Vue ({
           {
           date: '28/03/2020 10:10:40',
           text: 'La Marianna va in campagna',
-          status: 'received'
+          status: 'received',
+          menu: false
           },
           {
           date: '28/03/2020 10:20:10',
           text: 'Sicuro di non aver sbagliato chat?',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '28/03/2020 16:15:22',
           text: 'Ah scusa!',
-          status: 'received'
+          status: 'received',
+          menu: false
           }
         ]
       },
@@ -80,17 +89,20 @@ var app = new Vue ({
           {
           date: '10/01/2020 15:30:55',
           text: 'Hai portato a spasso il cane?',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '10/01/2020 15:50:00',
           text: 'Ricordati di dargli da mangiare',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '10/01/2020 16:15:22',
           text: 'Tutto fatto!',
-          status: 'received'
+          status: 'received',
+          menu: false
           }
         ]
       },
@@ -102,17 +114,20 @@ var app = new Vue ({
           {
           date: '28/03/2020 10:10:40',
           text: 'La Marianna va in campagna',
-          status: 'received'
+          status: 'received',
+          menu: false
           },
           {
           date: '28/03/2020 10:20:10',
           text: 'Sicuro di non aver sbagliato chat?',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '28/03/2020 16:15:22',
           text: 'Ah scusa!',
-          status: 'received'
+          status: 'received',
+          menu: false
           }
         ]
       },
@@ -124,17 +139,20 @@ var app = new Vue ({
           {
           date: '10/01/2020 15:30:55',
           text: 'Hai portato a spasso il cane?',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '10/01/2020 15:50:00',
           text: 'Ricordati di dargli da mangiare',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '10/01/2020 16:15:22',
           text: 'Tutto fatto!',
-          status: 'received'
+          status: 'received',
+          menu: false
           }
         ]
       },
@@ -146,17 +164,20 @@ var app = new Vue ({
           {
           date: '20/03/2020 16:30:00',
           text: 'Ciao come stai?',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '20/03/2020 16:30:55',
           text: 'Bene grazie! Stasera ci vediamo?',
-          status: 'received'
+          status: 'received',
+          menu: false
           },
           {
           date: '20/03/2020 16:35:00',
           text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           }
         ]
       },
@@ -168,17 +189,20 @@ var app = new Vue ({
           {
           date: '10/01/2020 15:30:55',
           text: 'Hai portato a spasso il cane?',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '10/01/2020 15:50:00',
           text: 'Ricordati di dargli da mangiare',
-          status: 'sent'
+          status: 'sent',
+          menu: false
           },
           {
           date: '10/01/2020 16:15:22',
           text: 'Tutto fatto!',
-          status: 'received'
+          status: 'received',
+          menu: false
           }
         ]
       }
@@ -189,7 +213,6 @@ var app = new Vue ({
     newText: '',
     /* cerca contatto */
     searchContact: '',
-    classActive: false
   },
   methods: {
     /* sostituzione del contatto attivo */
@@ -205,7 +228,8 @@ var app = new Vue ({
       newMessage = {
         date: newDate,
         text: this.newText,
-        status: 'sent'
+        status: 'sent',
+        menu: false
       };
       messageArray = this.activeContact.messages;
       messageArray.push(newMessage);
@@ -216,7 +240,8 @@ var app = new Vue ({
         answerMessage = {
           date: answerDate,
           text: 'ok',
-          status: 'received'
+          status: 'received',
+          menu: false
         };
         this.messageArray.push(answerMessage);
         clearInterval(answer);
@@ -229,9 +254,10 @@ var app = new Vue ({
         (element.name.toLowerCase().includes(this.searchContact.toLowerCase())) ? element.visible = true : element.visible = false;
       });
     },
-    /* funzione cancella messaggio visibile */
-    showBox: function(){
-      (this.classActive == false) ? this.classActive = true : this.classActive = false;
+    /* menù cancella messaggio visibile */
+    showBox: function(index){
+      /* this.classActive = !this.classActive; */
+      this.activeContact.messages[index].menu = !this.activeContact.messages[index].menu;
     },
     /* elimina messaggio */
     deleteMessage: function(index){
