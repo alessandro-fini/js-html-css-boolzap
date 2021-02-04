@@ -52,6 +52,7 @@
           <img :src="'img/avatar' + item.avatar + '.jpg'" :alt="item.name">
           <span> {{item.name}} </span>
           <span id="date-last-message"> {{item.messages[item.messages.length - 1].date}} </span>
+          <span id="text-last-message"> {{item.messages[item.messages.length - 1].text.substr(0, 15) + '...'}} </span>
         </div>
       </div>
       <!-- /main -->

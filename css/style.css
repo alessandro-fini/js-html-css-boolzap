@@ -169,6 +169,7 @@
   width: 100%;
   height: 70px;
   padding: 8px 20px;
+  position: relative;
 }
 
 .main-left .user-box:hover{
@@ -279,8 +280,22 @@
   display: block;
 }
 
-/* ora ultimo messaggio */
+/* ora e testo ultimo messaggio */
+/* .user-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
+
 .user-box #date-last-message{
   font-size: 12px;
   float: right;
+}
+
+.user-box #text-last-message{
+  vertical-align: bottom;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
 }
