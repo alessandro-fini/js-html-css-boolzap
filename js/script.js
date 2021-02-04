@@ -225,11 +225,7 @@ var app = new Vue ({
     /* funzione di ricerca */
     searchUser: function(){
       this.contacts.forEach((element) => {
-        if (element.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
-          element.visible = true;
-        } else {
-          element.visible = false;
-        }
+        (element.name.toLowerCase().includes(this.searchContact.toLowerCase())) ? element.visible = true : element.visible = false;
       });
     }
   }
