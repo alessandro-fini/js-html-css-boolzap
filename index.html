@@ -42,13 +42,13 @@
       <div class="search-box">
         <div class="input-box">
           <i class="fas fa-search"></i>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact" @keyup="searchUser">
         </div>
       </div>
       <!-- /top -->
       <!-- main -->
       <div class="main-left">
-        <div class="user-box" v-for="(item, index) in contacts" @click="toActive(index)" v-if="activeContact == '' ? activeContact = contacts[0] : activeContact = activeContact">
+        <div class="user-box" v-for="(item, index) in contacts" v-if="item.visible == true" @click="toActive(index)">
           <img :src="'img/avatar' + item.avatar + '.jpg'" :alt="item.name">
           <span> {{item.name}} </span>
         </div>
@@ -60,7 +60,7 @@
     <div class="right-box">
       <!-- top -->
       <div class="top-right">
-        <div class="name-box">
+        <div class="name-box" v-if="activeContact == '' ? activeContact = contacts[0] : activeContact = activeContact">
           <img :src="'img/avatar' + activeContact.avatar + '.jpg'" :alt="activeContact.name">
           <div class="content-right">
             <span> {{activeContact.name}} </span>

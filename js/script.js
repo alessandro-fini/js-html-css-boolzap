@@ -187,6 +187,8 @@ var app = new Vue ({
     activeContact: '',
     /* messaggio da input */
     newText: '',
+    /* cerca contatto */
+    searchContact: ''
   },
   methods: {
     /* sostituzione del contatto attivo */
@@ -220,5 +222,15 @@ var app = new Vue ({
       }, 1000);
       /* / */
     },
+    /* funzione di ricerca */
+    searchUser: function(){
+      this.contacts.forEach((element) => {
+        if (element.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
+          element.visible = true;
+        } else {
+          element.visible = false;
+        }
+      });
+    }
   }
 });
