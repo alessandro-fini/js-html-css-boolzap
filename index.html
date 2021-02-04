@@ -48,7 +48,7 @@
       <!-- /top -->
       <!-- main -->
       <div class="main-left">
-        <div class="user-box" v-for="(item, index) in contacts" v-if="item.visible == true" @click="toActive(index)">
+        <div class="user-box" v-for="(item, index) in contacts" v-if="item.visible" @click="toActive(index)">
           <img :src="'img/avatar' + item.avatar + '.jpg'" :alt="item.name">
           <span> {{item.name}} </span>
         </div>
