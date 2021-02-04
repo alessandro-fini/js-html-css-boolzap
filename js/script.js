@@ -27,7 +27,8 @@ var app = new Vue ({
           date: '10/01/2020 16:15:22',
           text: 'Tutto fatto!',
           status: 'received',
-          menu: false
+          menu: false,
+          time: '09:00'
           }
         ]
       },
@@ -52,7 +53,8 @@ var app = new Vue ({
           date: '20/03/2020 16:35:00',
           text: 'Mi piacerebbe ma devo andare a fare la spesa.',
           status: 'sent',
-          menu: false
+          menu: false,
+          time: '09:00'
           }
         ]
       },
@@ -77,7 +79,8 @@ var app = new Vue ({
           date: '28/03/2020 16:15:22',
           text: 'Ah scusa!',
           status: 'received',
-          menu: false
+          menu: false,
+          time: '09:00'
           }
         ]
       },
@@ -102,7 +105,8 @@ var app = new Vue ({
           date: '10/01/2020 16:15:22',
           text: 'Tutto fatto!',
           status: 'received',
-          menu: false
+          menu: false,
+          time: '09:00'
           }
         ]
       },
@@ -127,7 +131,8 @@ var app = new Vue ({
           date: '28/03/2020 16:15:22',
           text: 'Ah scusa!',
           status: 'received',
-          menu: false
+          menu: false,
+          time: '09:00'
           }
         ]
       },
@@ -152,7 +157,8 @@ var app = new Vue ({
           date: '10/01/2020 16:15:22',
           text: 'Tutto fatto!',
           status: 'received',
-          menu: false
+          menu: false,
+          time: '09:00'
           }
         ]
       },
@@ -177,7 +183,8 @@ var app = new Vue ({
           date: '20/03/2020 16:35:00',
           text: 'Mi piacerebbe ma devo andare a fare la spesa.',
           status: 'sent',
-          menu: false
+          menu: false,
+          time: '09:00'
           }
         ]
       },
@@ -202,7 +209,8 @@ var app = new Vue ({
           date: '10/01/2020 16:15:22',
           text: 'Tutto fatto!',
           status: 'received',
-          menu: false
+          menu: false,
+          time: '09:00'
           }
         ]
       }
@@ -224,12 +232,14 @@ var app = new Vue ({
     addMessage: function(){
       /* rilevamento data e ora */
       newDate = moment().format('DD/MM/YYYY HH:mm:ss');
+      newTime = moment().format('HH:mm');
       /* / */
       newMessage = {
         date: newDate,
         text: this.newText,
         status: 'sent',
-        menu: false
+        menu: false,
+        time: newTime
       };
       messageArray = this.activeContact.messages;
       messageArray.push(newMessage);
@@ -237,11 +247,13 @@ var app = new Vue ({
       /* messaggio di risposta */
       answer = setInterval(function(){
         answerDate = moment().format('DD/MM/YYYY HH:mm:ss');
+        answerTime = moment().format('HH:mm');
         answerMessage = {
           date: answerDate,
           text: 'ok',
           status: 'received',
-          menu: false
+          menu: false,
+          time: answerTime
         };
         this.messageArray.push(answerMessage);
         clearInterval(answer);
