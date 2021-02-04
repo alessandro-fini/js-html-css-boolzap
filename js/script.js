@@ -256,7 +256,6 @@ var app = new Vue ({
     },
     /* menù cancella messaggio visibile */
     showBox: function(index){
-      /* this.classActive = !this.classActive; */
       this.activeContact.messages[index].menu = !this.activeContact.messages[index].menu;
     },
     /* elimina messaggio */

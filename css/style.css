@@ -278,3 +278,9 @@
 .delete-box.active{
   display: block;
 }
+
+/* ora ultimo messaggio */
+.user-box #date-last-message{
+  font-size: 12px;
+  float: right;
+}
