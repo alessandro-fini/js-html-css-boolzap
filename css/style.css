@@ -243,3 +243,38 @@
   bottom: 2%;
   font-size: 13px;
 }
+
+/* menù cancella messaggio */
+.message i{
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  font-size: 18px;
+  color: #b1b1b1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.message:hover i{
+  opacity: 1;
+}
+
+.message .delete-box{
+  background-color: #eaeaea;
+  border-radius: 10px;
+  position: absolute;
+  top: 32%;
+  right: 2%;
+  padding: 0 15px;
+  z-index: 1;
+  display: none;
+}
+
+.delete-box p{
+  margin: 10px;
+  cursor: pointer;
+}
+
+.delete-box.active{
+  display: block;
+}

@@ -188,7 +188,8 @@ var app = new Vue ({
     /* messaggio da input */
     newText: '',
     /* cerca contatto */
-    searchContact: ''
+    searchContact: '',
+    classActive: false
   },
   methods: {
     /* sostituzione del contatto attivo */
@@ -227,6 +228,14 @@ var app = new Vue ({
       this.contacts.forEach((element) => {
         (element.name.toLowerCase().includes(this.searchContact.toLowerCase())) ? element.visible = true : element.visible = false;
       });
+    },
+    /* funzione cancella messaggio visibile */
+    showBox: function(){
+      (this.classActive == false) ? this.classActive = true : this.classActive = false;
+    },
+    /* elimina messaggio */
+    deleteMessage: function(index){
+      this.activeContact.messages.splice(index, 1);
     }
   }
 });
